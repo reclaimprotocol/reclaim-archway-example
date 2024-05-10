@@ -1,8 +1,13 @@
 import { createContext, useState } from "react";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 const ArchwayContext = createContext(null);
-const ARCHWAY_CHAIN_ID = 'archway-1';
-const ARCHWAY_LCD = 'https://rpc.mainnet.archway.io';
+
+const ARCHWAY_CHAIN_ID = 'constantine-3';
+const ARCHWAY_LCD = 'https://rpc.constantine.archway.tech';
+
+// Uncomment for Mainnet
+// const ARCHWAY_CHAIN_ID = 'archway-1';
+// const ARCHWAY_LCD = 'https://rpc.mainnet.archway.io';
  
 const ArchwayContextProvider = ({ children }) => {
   const [archwayClient, setArchwayClient] = useState(null);
@@ -73,8 +78,7 @@ const ArchwayContextProvider = ({ children }) => {
           if (!window.keplr) {
             alert("Intall keplr!");
           } else {
-            //Uncomment for Mainnet
-            
+
             const chainConfig = {
               "bech32Config": {
                 "bech32PrefixAccAddr": "archway",
@@ -87,41 +91,35 @@ const ArchwayContextProvider = ({ children }) => {
               "bip44": {
                 "coinType": 118
               },
-              "chainId": "archway-1",
-              "chainName": "Archway",
-              "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
+              "chainId": "constantine-3",
+              "chainName": "Archway (Testnet)",
+              "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/constantine/chain.png",
               "currencies": [
                 {
                   "coinDecimals": 18,
-                  "coinDenom": "ARCH",
-                  "coinGeckoId": "archway",
-                  "coinMinimalDenom": "aarch",
-                  "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+                  "coinDenom": "CONST",
+                  "coinMinimalDenom": "aconst"
                 }
               ],
               "features": ["cosmwasm"],
               "feeCurrencies": [
                 {
                   "coinDecimals": 18,
-                  "coinDenom": "ARCH",
-                  "coinGeckoId": "archway",
-                  "coinMinimalDenom": "aarch",
+                  "coinDenom": "CONST",
+                  "coinMinimalDenom": "aconst",
                   "gasPriceStep": {
                     "low": 140000000000,
                     "average": 196000000000,
                     "high": 225400000000
-                  },
-                  "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+                  }
                 }
               ],
-              "rest": "https://api.mainnet.archway.io",
-              "rpc": "https://rpc.mainnet.archway.io",
+              "rest": "https://api.constantine.archway.tech",
+              "rpc": "https://rpc.constantine.archway.tech",
               "stakeCurrency": {
                 "coinDecimals": 18,
-                "coinDenom": "ARCH",
-                "coinGeckoId": "archway",
-                "coinMinimalDenom": "aarch",
-                "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+                "coinDenom": "CONST",
+                "coinMinimalDenom": "aconst"
               },
               "nodeProvider": {
                 "name": "Phi Labs",
@@ -129,6 +127,62 @@ const ArchwayContextProvider = ({ children }) => {
                 "website":"https://philabs.xyz"
               }
             }
+            //Uncomment for Mainnet
+            
+            // const chainConfig = {
+            //   "bech32Config": {
+            //     "bech32PrefixAccAddr": "archway",
+            //     "bech32PrefixAccPub": "archwaypub",
+            //     "bech32PrefixConsAddr": "archwayvalcons",
+            //     "bech32PrefixConsPub": "archwayvalconspub",
+            //     "bech32PrefixValAddr": "archwayvaloper",
+            //     "bech32PrefixValPub": "archwayvaloperpub"
+            //   },
+            //   "bip44": {
+            //     "coinType": 118
+            //   },
+            //   "chainId": "archway-1",
+            //   "chainName": "Archway",
+            //   "chainSymbolImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/chain.png",
+            //   "currencies": [
+            //     {
+            //       "coinDecimals": 18,
+            //       "coinDenom": "ARCH",
+            //       "coinGeckoId": "archway",
+            //       "coinMinimalDenom": "aarch",
+            //       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+            //     }
+            //   ],
+            //   "features": ["cosmwasm"],
+            //   "feeCurrencies": [
+            //     {
+            //       "coinDecimals": 18,
+            //       "coinDenom": "ARCH",
+            //       "coinGeckoId": "archway",
+            //       "coinMinimalDenom": "aarch",
+            //       "gasPriceStep": {
+            //         "low": 140000000000,
+            //         "average": 196000000000,
+            //         "high": 225400000000
+            //       },
+            //       "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+            //     }
+            //   ],
+            //   "rest": "https://api.mainnet.archway.io",
+            //   "rpc": "https://rpc.mainnet.archway.io",
+            //   "stakeCurrency": {
+            //     "coinDecimals": 18,
+            //     "coinDenom": "ARCH",
+            //     "coinGeckoId": "archway",
+            //     "coinMinimalDenom": "aarch",
+            //     "coinImageUrl": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/archway/aarch.png"
+            //   },
+            //   "nodeProvider": {
+            //     "name": "Phi Labs",
+            //     "email": "support@philabs.xyz",
+            //     "website":"https://philabs.xyz"
+            //   }
+            // }
           await window.keplr.experimentalSuggestChain(chainConfig);
       }
     } catch (error) {
