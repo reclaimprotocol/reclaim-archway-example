@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Reclaim } from "@reclaimprotocol/js-sdk";
-import { NeutronFunctions } from "./utilities/NeutronFunctions";
+import { ArchwayFunctions } from "./utilities/ArchwayFunctions";
  
 export default function VerifyProof(props) {
   const [proof, setProof] = useState({});
   const [verified, setVerified] = useState(false);
-  const { verify_proof } = NeutronFunctions();
+  const { verify_proof } = ArchwayFunctions();
  
   useEffect(() => {
     const newProof = Reclaim.transformForOnchain(props.proof);

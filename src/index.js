@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { NeutronContextProvider } from "./utilities/NeutronContext";
+import { ArchwayContextProvider } from "./utilities/ArchwayContext";
  
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <NeutronContextProvider>
+  <ArchwayContextProvider>
     <App />
-  </NeutronContextProvider>
+  </ArchwayContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

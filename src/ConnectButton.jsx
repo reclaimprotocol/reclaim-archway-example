@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { NeutronContext } from "./utilities/NeutronContext";
+import { ArchwayContext } from "./utilities/ArchwayContext";
  
 export default function ConnectButton () {
-    const { neutronAddress, connectWallet, addNeutronToKeplr } = useContext(NeutronContext);
+    const { archwayAddress, connectWallet, addArchwayToKeplr } = useContext(ArchwayContext);
   
     return (
-        <div>Neutron
+        <div>Archway
         <div>
-          <button className="button" onClick={addNeutronToKeplr}>
-            Add Neutron to Keplr
+          <button className="button" onClick={addArchwayToKeplr}>
+            Add Archway to Keplr
           </button>
           <hr/>
           <button className="button" onClick={connectWallet}>
@@ -16,8 +16,8 @@ export default function ConnectButton () {
           </button>
         </div>
         <h2>
-          {neutronAddress
-            ? neutronAddress.slice(0, 10) + "...." + neutronAddress.slice(41, 45)
+          {archwayAddress
+            ? archwayAddress.slice(0, 10) + "...." + archwayAddress.slice(41, 45)
             : "Please connect wallet"}
         </h2>
       </div>
