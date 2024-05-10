@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { ArchwayContext } from "./ArchwayContext";
 import { calculateFee, GasPrice } from "@cosmjs/stargate";
 
-let contractAddress = "archway19z8n74lcxz5gp0j4s20dfnmq30954k8cagjj53jrutqe2etlph3q87svth";
+let contractAddress = "archway1sqmc9q79fz50tvxul4c8r8k7dg9jagv5cxawqagkp84wq6hh32rqckhu92";
+
+// Uncomment for mainnet
+// let contractAddress = "archway19z8n74lcxz5gp0j4s20dfnmq30954k8cagjj53jrutqe2etlph3q87svth";
  
 const ArchwayFunctions = () => {
   const { archwayClient, archwayAddress } = useContext(ArchwayContext);
