@@ -76,7 +76,7 @@ npm run start
 
 ## Code Overview
 
-`src/App.tsx`
+`src/App.js`
 
 - Proof Request: Configures and initiates proof requests through Reclaim’s SDK.
 - QR Code Generation: Displays a QR code for users to scan and submit proofs.
